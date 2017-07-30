@@ -1,0 +1,20 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+a {
+    color: #36AECC;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #AAA;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
