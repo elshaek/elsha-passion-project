@@ -1,10 +1,3 @@
-
-def helper_check_print(message,to_print)
-  puts "**********<<<<<<<<<<<<<< #{message} >>>>>>>>>>>>>>>>>>>**********"
-   p to_print
-  puts "**********<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>**********"
-end 
-
 def login(user)
   session[:user_id] = user.id
 end
