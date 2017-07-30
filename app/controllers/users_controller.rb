@@ -20,3 +20,12 @@ get '/users/:id' do
   @user = User.find(params[:id])
   erb:'users/show.html'
 end
+
+
+# if request.xhr?
+
+#   content_type :json
+#   {id: user_id}.to_json
+# else
+
+# end
