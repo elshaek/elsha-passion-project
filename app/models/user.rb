@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
     if user.password == password
       return true 
     else
-    false
+      false
+    end
   end
 
 end
