@@ -9,8 +9,8 @@ end
 
 # Request to login, redirect to user profile
 post '/login' do
-  @is_user = User.authenticate(params[:email], params[:password])
-  if @is_user
+  @user = User.authenticate(params[:email], params[:password])
+  if @user
     login(@user)
 
     redirect "users/#{@user.id}"
