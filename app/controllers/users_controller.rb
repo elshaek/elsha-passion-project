@@ -6,7 +6,7 @@ end
 # Register a new user
 post '/users' do
   @user = User.new({username: params[:username], email: params[:email]})
-  @user.hashed_password = params[:password]
+  @user.password = params[:password]
 
   if @user.save
     login(@user)
