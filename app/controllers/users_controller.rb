@@ -1,6 +1,6 @@
 # Create a new user
 get '/users/new' do
-  erb:'users/new.html'
+  erb:'users/new'
 end
 
 # Register a new user
@@ -19,7 +19,7 @@ end
 # User Profile page
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb:'users/show.html'
+  erb:'users/show'
 end
 
 

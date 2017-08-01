@@ -3,7 +3,7 @@ get '/login' do
   if logged_in?
     redirect "/users/#{current_user.id}"
   else
-    erb:'sessions/new.html'
+    erb:'sessions/new'
   end
 end
 
