@@ -18,14 +18,17 @@ var inputTextboxListener = function() {
 };
 
 var dataChangeListener = function() {
-  $(".bold").on("DOMNodeInserted", function() {
-    $(".bold").css("background-color", "lightgrey");
+  $(document).on("DOMNodeInserted", ".bold", function() {
+    $(".bold").removeClass("flash");
+    // $(".bold").fadeTo(50, 0.5, function() { $(this).fadeTo(350, 1.0); });
+    // $(".bold").toggle( "highlight" )
   });
 };
 
+
 $(document).ready(function() {
   inputTextboxListener();
-  // dataChangeListener();
+  dataChangeListener();
 });
 
 var requestData = function(){
