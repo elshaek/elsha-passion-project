@@ -37,24 +37,32 @@ var requestData = function(){
   sendGetRequest.done(function(response) {
     var userTokenInput = parseInt($(".dice-token-count").val());
     var quarterlyProfitsUsd = (response['eth_rate'] * response['quarterly_profits_eth']).formatMoney(2);
+    var quarterlyProfitsIdr = (response['eth_rate_idr'] * response['quarterly_profits_eth']).formatMoney(2);
 
     var userShare = userTokenInput / response['total_dice_supply'];
     var quarterlyDividendDollar = (userShare * response['eth_rate'] * response['quarterly_profits_eth']).formatMoney(2);
+    var quarterlyDividendRupiah = (userShare * response['eth_rate_idr'] * response['quarterly_profits_eth']).formatMoney(2);
     var quarterlyDividendEth = (userShare * response['quarterly_profits_eth']).toFixed(6);
 
     var totalValueDollar = (userTokenInput * response['dice_rate_usd']).formatMoney(2);
+    var totalValueRupiah = (userTokenInput * response['dice_rate_idr']).formatMoney(2);
     var totalValueEth = (userTokenInput * response['dice_rate_eth']).toFixed(6);
 
-    $('#quarterly-profits-usd').html('$' + quarterlyProfitsUsd);
+
+
+    $('#quarterly-profits-usd').html('Rp. ' + quarterlyProfitsIdr);
     $('#quarterly-profits-eth').html(response['quarterly_profits_eth'].toFixed(6) + 'ETH');
 
     $('#quarterly-dividend-dollar').html('$' + quarterlyDividendDollar);
+    $('#quarterly-dividend-rupiah').html('Rp. ' + quarterlyDividendRupiah);
     $('#quarterly-dividend-eth').html(quarterlyDividendEth + 'ETH');
 
     $('#total-value-dollar').html('$' + totalValueDollar);
+    $('#total-value-rupiah').html('Rp. ' + totalValueRupiah);
     $('#total-value-eth').html(totalValueEth + 'ETH');
 
     $('#current-eth-rate').html('$' + response['eth_rate'].formatMoney(2));
+    $('#current-eth-rate-idr').html('Rp. ' + response['eth_rate_idr'].formatMoney(2));
     $('#current-dice-rate').html(response['dice_rate_eth'].toFixed(6) + 'ETH');
   });
 }; 
