@@ -4,7 +4,7 @@ end
 
 get '/requestinfo' do
   @total_dice_supply = EtherscanAdapter.new.get_total_dice_supply
-  @quarterly_profits_eth = EtherscanAdapter.new.get_bankroll_balance - 1200
+  @quarterly_profits_eth = EtherscanAdapter.new.get_bankroll_balance - 2500
   @eth_rate = EtherscanAdapter.new.get_ether_price
   @dice_rate_eth = CryptocompareAdapter.new.dice_value['ETH']
   @dice_rate_usd = CryptocompareAdapter.new.dice_value['USD']
