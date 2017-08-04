@@ -1,8 +1,34 @@
+body {
+  background-color: #F1F1F1;
+  /*color: #2BC991;*/
+}
+
+h1 {
+  color: #428BCA;
+  padding-top: 20px;
+}
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 3px solid lightgrey;
+  margin: 50px auto;
+  width: 60%;
+  padding: 0px 30px 30px 30px;
+  /*border: 3px solid lightgrey;*/
+  border-radius: 25px;
+  background-color: white;
+  /*background: linear-gradient(to bottom right, black, grey);*/
+}
+
+.nested-container {
+  border-bottom: 1px solid lightgrey;
+}
+
+.nested-container:last-child {
+  border: 0px;
+}
+
+input {
+  height: 25px;
+  border: 2px solid #F1F1F1;
+  border-radius: 5px;
 }
 
 a {
