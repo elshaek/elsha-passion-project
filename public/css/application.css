@@ -1,20 +1,18 @@
 body {
   background-color: #F1F1F1;
-  /*color: #2BC991;*/
 }
 
 h1 {
   color: #428BCA;
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 8px;
 }
 .container {
   margin: 50px auto;
   width: 60%;
   padding: 0px 30px 30px 30px;
-  /*border: 3px solid lightgrey;*/
   border-radius: 25px;
   background-color: white;
-  /*background: linear-gradient(to bottom right, black, grey);*/
 }
 
 .nested-container {
@@ -25,10 +23,20 @@ h1 {
   border: 0px;
 }
 
+.flash {
+    animation: flash 1s;
+}
+
+  @keyframes flash {
+      from {background: #cac4ed;}
+      to {background: transparent;}
+  }
+
 input {
   height: 25px;
   border: 2px solid #F1F1F1;
   border-radius: 5px;
+  background-color: #F1F1F1;
 }
 
 a {
@@ -47,4 +55,12 @@ a:hover {
 
 .bold {
   font-weight: bold;
+  color: #3d8e3d;
+}
+
+footer {
+  margin: -20px auto;
+  width: 50%;
+  padding-left: 300px;
+  font-size: 11pt;
 }
