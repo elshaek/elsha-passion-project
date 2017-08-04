@@ -10,7 +10,7 @@ class EtherscanAdapter
   def get_total_dice_supply
     @total_dice_supply_options = { query: { 'module': 'stats', 'action': 'tokensupply', 'contractaddress': '0x2e071D2966Aa7D8dECB1005885bA1977D6038A65', 'apikey': @api_key }}
     response = self.class.get("/api", @total_dice_supply_options)
-    return response["result"].to_f / 1000000000000000
+    return response["result"].to_f / 10000000000000000
   end
 
   def get_bankroll_balance
