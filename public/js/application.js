@@ -25,15 +25,29 @@ var dataChangeListener = function() {
 
 $(document).ready(function() {
   inputTextboxListener();
-  dataChangeListener();
+  // dataChangeListener();
 });
 
 var requestData = function(){
   var sendGetRequest = $.get('/requestinfo');
 
   sendGetRequest.done(function(response) {
-    $('#quarterly-profits-usd').html('$' + (response['eth_rate']*response['quarterly_profits_eth']).formatMoney(2));
+    var userTokenInput = parseInt($(".dice-token-count").val());
+    var quarterlyProfitsUsd = (response['eth_rate'] * response['quarterly_profits_eth']).formatMoney(2);
+    // var quarterlyDividendDollar =
+    // var quarterlyDividendEth =
+    var totalValueDollar = (userTokenInput * response['dice_rate_usd']).formatMoney(2);
+    var totalValueEth = (userTokenInput * response['dice_rate_eth']).toFixed(6);
+
+    $('#quarterly-profits-usd').html('$' + quarterlyProfitsUsd);
     $('#quarterly-profits-eth').html(response['quarterly_profits_eth'].toFixed(6) + 'ETH');
+
+    // $('#quarterly-dividend-dollar').html('$' + totalValueDollar);
+    // $('#quarterly-dividend-eth').html(quarterlyDividendEth + 'ETH');
+
+    $('#total-value-dollar').html('$' + totalValueDollar);
+    $('#total-value-eth').html(totalValueEth + 'ETH');
+
     $('#current-eth-rate').html('$' + response['eth_rate'].formatMoney(2));
     $('#current-dice-rate').html(response['dice_rate_eth'].toFixed(6) + 'ETH');
   });
