@@ -34,16 +34,19 @@ var requestData = function(){
   sendGetRequest.done(function(response) {
     var userTokenInput = parseInt($(".dice-token-count").val());
     var quarterlyProfitsUsd = (response['eth_rate'] * response['quarterly_profits_eth']).formatMoney(2);
-    // var quarterlyDividendDollar =
-    // var quarterlyDividendEth =
+
+    var userShare = userTokenInput / response['total_dice_supply'];
+    var quarterlyDividendDollar = (userShare * response['eth_rate'] * response['quarterly_profits_eth']).formatMoney(2);
+    var quarterlyDividendEth = (userShare * response['quarterly_profits_eth']).toFixed(6);
+
     var totalValueDollar = (userTokenInput * response['dice_rate_usd']).formatMoney(2);
     var totalValueEth = (userTokenInput * response['dice_rate_eth']).toFixed(6);
 
     $('#quarterly-profits-usd').html('$' + quarterlyProfitsUsd);
     $('#quarterly-profits-eth').html(response['quarterly_profits_eth'].toFixed(6) + 'ETH');
 
-    // $('#quarterly-dividend-dollar').html('$' + totalValueDollar);
-    // $('#quarterly-dividend-eth').html(quarterlyDividendEth + 'ETH');
+    $('#quarterly-dividend-dollar').html('$' + quarterlyDividendDollar);
+    $('#quarterly-dividend-eth').html(quarterlyDividendEth + 'ETH');
 
     $('#total-value-dollar').html('$' + totalValueDollar);
     $('#total-value-eth').html(totalValueEth + 'ETH');
@@ -53,4 +56,4 @@ var requestData = function(){
   });
 }; 
 
-window.setInterval(function(){requestData()}, 1000);
+window.setInterval(function(){requestData()}, 500);
