@@ -16,6 +16,8 @@ gem 'shotgun', '~>0.9.1'
 
 gem 'bcrypt'
 
+gem 'httparty'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
@@ -26,5 +28,5 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
-  gem 'pry-byebug'
+  # gem 'pry-byebug'
 end

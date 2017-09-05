@@ -18,6 +18,17 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/">USD</a></li>
+        <li><a href="/idr">IDR</a></li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </div>
+  <footer>
+      Powered by <a href="https://etherscan.io/apis">Etherscan.io</a> and <a href="https://www.cryptocompare.com/api">CryptoCompare.com</a>
+    </footer>
 </body>
 </html>
