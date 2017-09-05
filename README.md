@@ -1,18 +1,18 @@
-### Purpose
-The Sinatra Skeleton:
+# ![Image of DICE logo](public/etheroll.png?raw=true) myDICEToken
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+A web app that calculates the total value of DICE Tokens (an erc-20 token) owned by token holders, and their current share of profits given the current status of the bankroll balance.
 
-### Quickstart
+### Deployed to Heroku
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+[MyDICEToken](https://mydicetoken.herokuapp.com/)
 
-As needed, create models & migrations with the `rake` tasks:
+### User stories
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+- A user can see the most updated DICE (ROL) token rates in ETH, USD, IDR (updated every 500ms)
+- A user can type the amount of tokens they own and see its value in
+ETH, USD, IDR
+- A user can type the amount of tokens they own and get the approximate value of their share of the profits given the status of the bankroll balance for the current quarter
+
+### UI
+
+![](public/MyDICEToken_home.png?raw=true)
