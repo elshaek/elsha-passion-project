@@ -1,10 +1,10 @@
 Number.prototype.formatMoney = function(c, d, t){
-var n = this, 
-    c = isNaN(c = Math.abs(c)) ? 2 : c, 
-    d = d == undefined ? "." : d, 
-    t = t == undefined ? "," : t, 
-    s = n < 0 ? "-" : "", 
-    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), 
+var n = this,
+    c = isNaN(c = Math.abs(c)) ? 2 : c,
+    d = d == undefined ? "." : d,
+    t = t == undefined ? "," : t,
+    s = n < 0 ? "-" : "",
+    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
     j = (j = i.length) > 3 ? j % 3 : 0;
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
@@ -50,7 +50,8 @@ var requestData = function(){
 
 
 
-    $('#quarterly-profits-usd').html('Rp. ' + quarterlyProfitsIdr);
+    $('#quarterly-profits-usd').html('$' + quarterlyProfitsUsd);
+    $('#quarterly-profits-idr').html('Rp. ' + quarterlyProfitsIdr);
     $('#quarterly-profits-eth').html(response['quarterly_profits_eth'].toFixed(6) + 'ETH');
 
     $('#quarterly-dividend-dollar').html('$' + quarterlyDividendDollar);
@@ -65,6 +66,6 @@ var requestData = function(){
     $('#current-eth-rate-idr').html('Rp. ' + response['eth_rate_idr'].formatMoney(2));
     $('#current-dice-rate').html(response['dice_rate_eth'].toFixed(6) + 'ETH');
   });
-}; 
+};
 
 window.setInterval(function(){requestData()}, 500);
