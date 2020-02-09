@@ -14,7 +14,7 @@ class EtherscanAdapter
   end
 
   def get_bankroll_balance
-    @bankroll_balance_options = { query: { 'module': 'account', 'action': 'balance', 'tag': 'latest', 'address': '0xEce701C76bD00D1C3f96410a0C69eA8Dfcf5f34E', 'apikey': @api_key }}
+    @bankroll_balance_options = { query: { 'module': 'account', 'action': 'balance', 'tag': 'latest', 'address': '0xa52e014b3f5cc48287c2d483a3e026c32cc76e6d', 'apikey': @api_key }}
     response = self.class.get("/api", @bankroll_balance_options)
     return response["result"].to_f / 1000000000000000000
   end
