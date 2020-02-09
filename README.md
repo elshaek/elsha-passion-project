@@ -16,3 +16,7 @@ ETH, USD, IDR
 ### UI
 
 ![](public/MyDICEToken_home.png?raw=true)
+
+### Others
+
+Type `bundle exec shotgun` to run app
